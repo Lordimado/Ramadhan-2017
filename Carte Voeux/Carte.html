@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Carte Voeux</title>
+ <link rel="icon" href="http://s01.arab.sh/i/00077/bsgfyfivjent.png">
+ <meta charset="utf-8">
+ <style>
+   *{
+    text-align: center;
+   }
+   h1{
+   	color: white;
+    	font-size: 58px;
+    	margin-top: -10px;
+   }
+   body{
+   	background-image: url(ramadan_croissant.jpg);
+   	background-repeat: no-repeat, repeat;
+   	background-size:1373px 850px;
+    	padding: 15px;
+   }
+   #firework{
+   	position: absolute;
+    right: 537px;
+    top: 85px;
+   }
+    #envelope {
+    width: 100px;
+    height: 100px;
+    margin-top: 65px;
+    position: relative;
+    transition: width 2s, height 2s, transform 2s;
+    cursor: pointer;
+}
+
+  #envelope:hover {
+    width: 300px;
+    position: relative;
+    height: 300px;
+    transform: rotate(360deg);
+    cursor: pointer;
+}
+   
+   #latern1{
+   	position: absolute;
+    	top: 1px;
+    	right: 1px;
+   }
+   #latern2{
+   	position: absolute;
+    	top: 1px;
+    	left: 1px;
+   }
+   .parchemin{
+   	background-image: url(parchemin.png);
+    background-size: 491px;
+    width: 502px;
+    background-repeat: no-repeat;
+    height: 344px;
+    margin: auto;
+   }
+   p{
+   	width: 235px;
+    	position: relative;
+    	left: 140px;
+    	font-size: 31px;
+    	top: 70px;
+   }
+   ul,li{
+    list-style: none;
+   }
+ </style>
+
+</head>
+<body>
+<div id="cont">
+<h1>ﺃﻫﻼً ﻳﺎ ﺭﻣﻀﺎﻥ</h1>
+<img src="latern.gif" id="latern1">
+<img src="latern.gif" id="latern2">
+<img src="firework.gif" id="firework">
+<img src="envelope.png" id="envelope">
+<audio loop autoplay>
+  <source src="Ramadhan.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+</div>
+<div>
+<div class="parchemin">
+	<p>رفع الله قدرك وفرج همك وبلغك
+شهر رمضان الذي احبه ربك
+ودمت لمن يحبك</p></div>
+<div class="parchemin">
+<p>ما باقي إلا أيام معدودة....
+وتطوى صفحة من الزمان.....
+ويبدأ رمضان.....</p>
+</div>
+<div class="parchemin">
+<p>ياطيورالسلام
+زوريهم وعلي الخد
+بوسيهم وبشعبان
+هنيهم وبقرب
+رمضان باركيلهم</p>
+</div>
+</div>
+<script src="jquery-3.2.0.js"></script>
+<script>
+	$(function(){
+		$(".parchemin").css("display",'none');
+		$("#envelope").on('click',function(){
+			$("#firework").css("display","none");
+			$("#envelope").css("display",'none');
+			$(".parchemin:first").css("display","inline-block");
+			$(".parchemin:first > p").on("click",function(){
+				$(".parchemin:eq(1)").css("display","inline-block");
+				$(".parchemin:eq(1)").on("click",function(){
+					$(".parchemin:last").css("display","inline-block");
+					$(".parchemin:last").on("click",function(){
+						$("body").css("background-image","url(ramadhanwall.jpg)")
+					});
+
+				});
+			});
+		});
+	});
+	window.onload;
+</script>
+</body>
+</html>
